@@ -1,0 +1,40 @@
+find logo
+bottom navigator: Home, Maps
+flow the applications
+1. Splash screen
+2. Pemilihan kategory makanan: western, traditional, japanese, arabian
+3. after choose the category, the user will be see the page for the recomendation of the food, 
+   and also can find the food at the search menu
+4. after choose the food, the ingredient will be displayed at the screen
+5. at the maps bottom menu, the user can find the nearest restaurant
+
+based color 
+
+main => #2e928f
+
+secondary => #36adaa
+
+
+daftar API untuk makananan
+1. https://spoonacular.com/food-api/docs#Search-Recipes-Complex
+2. https://api2.bigoven.com/web/console/getkey
+
+daftar API untuk restaurant
+1. http://developer-tripadvisor.com/content-api/documentation/location/
+2. zomato => API key zomato:a0ec1643eb7bd6d8f4d7561fd2f289f0
+3. https://developers.zomato.com/documentation#!/common/collections
+
+
+
+
+spoonacular API
+API Key: 7cd05d32ed7b44118b76b9626ed5b6bb
+
+contoh get recipe
+https://api.spoonacular.com/recipes/complexSearch?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb
+
+contoh get recipe and ingredients by ID
+https://api.spoonacular.com/recipes/547775/information?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb
+
+contoh get recipe berdasarkan type
+https://api.spoonacular.com/recipes/complexSearch?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb&type=breakfast
