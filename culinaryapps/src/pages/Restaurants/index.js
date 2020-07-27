@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ImageBackground, StyleSheet, Text, View, ScrollView } from 'react-native'
-import { ILBg3Home } from '../../assets'
+import { ILBg3Home, ILBgRestaurant1, ILBgRestaurant2 } from '../../assets'
 import { colors, fonts } from '../../utils'
 import { Search, Gap, BoxRecommended, BoxOtherFood } from '../../components'
 import Axios from 'axios'
@@ -8,7 +8,7 @@ import Axios from 'axios'
 const Restaurants = () => {
     return (
         <View style={styles.container}>
-            <ImageBackground source={ILBg3Home} style={styles.img}>
+            <ImageBackground source={ILBgRestaurant2} style={styles.img}>
                 <Text style={styles.title}>Let's Find an Awsome Restaurant</Text>
             </ImageBackground>
             <View style={styles.content}>
@@ -74,8 +74,9 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         fontFamily: fonts.primary[600],
+        color: colors.white,
         maxWidth: 170,
-        marginLeft: 110,
+        marginLeft: 20,
         marginTop: 30
     },
     wrapperSection:{
