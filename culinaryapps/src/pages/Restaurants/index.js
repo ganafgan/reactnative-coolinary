@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { ImageBackground, StyleSheet, Text, View, ScrollView } from 'react-native'
-import { ILBg3Home, ILBgRestaurant1, ILBgRestaurant2 } from '../../assets'
+import React from 'react'
+import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ILBgRestaurant2 } from '../../assets'
+import { BoxOtherFood, BoxRecommended, Gap, Search } from '../../components'
 import { colors, fonts } from '../../utils'
-import { Search, Gap, BoxRecommended, BoxOtherFood } from '../../components'
-import Axios from 'axios'
 
 const Restaurants = () => {
     return (
@@ -18,6 +17,7 @@ const Restaurants = () => {
                         <Gap height={20} />
                     </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
+                    <Text style={styles.titleContent}>Favorite Restaurants</Text>
                     <View style={styles.wrapperScroll}>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             <View style={styles.boxRecommended}>
@@ -31,8 +31,9 @@ const Restaurants = () => {
                             </View>
                         </ScrollView>
                     </View>
+                    <Gap height={20} />
+                    <Text style={styles.titleContent}>Other Restaurants</Text>
                     <View style={styles.otherFood}>
-                        <Gap height={20} />
                         <BoxOtherFood />
                         <BoxOtherFood />
                         <BoxOtherFood />
@@ -58,9 +59,10 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
+        color: colors.white,
         fontFamily: fonts.primary[600],
-        maxWidth: 150,
-        marginLeft: 110,
+        maxWidth: 170,
+        marginLeft: 20,
         marginTop: 30
     },
     content: {
@@ -71,13 +73,12 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20
         
     },
-    title: {
+    titleContent: {
         fontSize: 18,
         fontFamily: fonts.primary[600],
-        color: colors.white,
-        maxWidth: 170,
+        color: colors.black,
         marginLeft: 20,
-        marginTop: 30
+        marginBottom: 10
     },
     wrapperSection:{
         paddingHorizontal: 20
