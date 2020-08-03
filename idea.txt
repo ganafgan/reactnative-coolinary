@@ -26,7 +26,10 @@ daftar API untuk restaurant
 
 
 
+contoh call API zomato:
+https://developers.zomato.com/api/v2.1/cities?user-key=a0ec1643eb7bd6d8f4d7561fd2f289f0&city_ids=11502
 
+ID Bandung di Zomaton: 11052
 spoonacular API
 API Key: 7cd05d32ed7b44118b76b9626ed5b6bb
 

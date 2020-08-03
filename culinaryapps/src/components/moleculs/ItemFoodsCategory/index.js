@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, ImageBackground } from 'reac
 import { ILCatWestern } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const BoxCategory = (props) => {
+const ItemFoodsCategory = (props) => {
     return (
         <TouchableOpacity onPress={props.onPress} style={styles.container}>
             <Image source={props.img} style={styles.img}/>
@@ -12,7 +12,7 @@ const BoxCategory = (props) => {
     )
 }
 
-export default BoxCategory
+export default ItemFoodsCategory
 
 const styles = StyleSheet.create({
     container: {

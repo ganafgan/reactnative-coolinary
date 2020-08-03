@@ -1,10 +1,10 @@
 import React from 'react'
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { ILBgHome, ILLogo, ILCaffee, ILBakery, ILFoodCourt, ILCasualDining, ILFineDining } from '../../assets'
-import { Gap, ItemRestaurantsCategory } from '../../components'
+import { Image, ImageBackground, StyleSheet, Text, View, ScrollView } from 'react-native'
+import { ILBgHome, ILLogo, ILBandung, ILJakarta, ILSurabaya, ILYogyakarta, ILCaffee, ILFoodCourt, ILCasualDining, ILFineDining, ILBakery } from '../../assets'
 import { colors, fonts } from '../../utils'
+import { ItemRestaurantsCategory, Gap } from '../../components'
 
-const FoodCategory = (props) => {
+const RestaurantsCategory = ({navigation}) => {
     return (
         <View style={styles.container}>
             <ImageBackground source={ILBgHome} style={styles.imgBackground}>
@@ -24,7 +24,7 @@ const FoodCategory = (props) => {
     )
 }
 
-export default FoodCategory
+export default RestaurantsCategory
 
 const styles = StyleSheet.create({
     container: {

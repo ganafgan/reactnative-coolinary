@@ -23,7 +23,8 @@
     "react-native-screens": "^2.9.0",
     "react-native-svg": "^12.1.0",
     "react-native-svg-transformer": "^0.14.3",
-    "react-native-webview": "^10.3.2"
+    "react-native-webview": "^10.3.2",
+    "react-number-format": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

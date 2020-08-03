@@ -1,13 +1,20 @@
-import BoxCategory from './BoxCategory';
+import ItemFoodsCategory from './ItemFoodsCategory';
 import Search from './Search';
-import BoxRecommended from './BoxRecommended'
+import BoxRestaurants from './BoxRestaurants'
 import BottomNavigator from './BottomNavigator'
-import BoxOtherFood from './BoxOtherFood'
+import BoxOtherRestaurants from './BoxOtherRestaurants'
+import BoxFoods from './BoxFoods'
+import BoxOtherFoods from './BoxOtherFoods'
+import ItemRestaurantsCategory from './ItemRestaurantsCategory' 
+
 
 export {
-    BoxCategory,
+    ItemFoodsCategory,
     Search,
-    BoxRecommended,
     BottomNavigator,
-    BoxOtherFood
+    BoxRestaurants,
+    BoxOtherRestaurants,
+    BoxFoods,
+    BoxOtherFoods,
+    ItemRestaurantsCategory
 }

@@ -1,10 +1,58 @@
-import React from 'react'
-import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { ImageBackground, ScrollView, StyleSheet, Text, View, Button } from 'react-native'
 import { ILBg3Home } from '../../assets'
-import { BoxOtherFood, BoxRecommended, Gap, Search } from '../../components'
+import { Gap, Search, BoxFoods, BoxOtherFoods } from '../../components'
 import { colors, fonts } from '../../utils'
+import Axios from 'axios'
+import Loading from '../Loading'
 
 const Home = () => { 
+
+    const [dataFoods, setDataFoods] = useState(null)
+    console.log(dataFoods)
+
+    useEffect(()=>{
+        getDataFoods()
+    },[])
+
+    const getDataFoods = () => {
+        const key = '7cd05d32ed7b44118b76b9626ed5b6bb'
+        Axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}`)
+        .then((res)=>{
+            console.log(res)
+            setDataFoods(res.data.results)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+
+    const renderDataFoods = () => {
+        let filtered = dataFoods.slice(0,5)
+
+        return filtered.map((val)=>{
+            return <BoxFoods 
+                    key={val.id}
+                    img={{uri : val.image}}
+                    nama={val.title}
+                />
+        })
+    }
+
+    const renderOtherFoods = () => {
+        let filtered = dataFoods.slice(5,10)
+
+        return filtered.map((val)=>{
+            return <BoxOtherFoods 
+                    key={val.id}
+                    img={{uri: val.image}}
+                    nama={val.title}
+                />
+        })
+    }
+    if ( dataFoods === null ){
+        return <Loading />
+    }
     return (
         <View style={styles.container}>
             <ImageBackground source={ILBg3Home} style={styles.img}>
@@ -22,11 +70,7 @@ const Home = () => {
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             <View style={styles.boxRecommended}>
                                 <Gap width={40} />
-                                <BoxRecommended />
-                                <BoxRecommended />
-                                <BoxRecommended />
-                                <BoxRecommended />
-                                <BoxRecommended />
+                                {renderDataFoods()}
                                 <Gap width={30} />
                             </View>
                         </ScrollView>
@@ -34,11 +78,7 @@ const Home = () => {
                     <Gap height={20} />
                     <Text style={styles.titleContent}>Other Foods</Text>
                     <View style={styles.otherFood}>
-                        <BoxOtherFood />
-                        <BoxOtherFood />
-                        <BoxOtherFood />
-                        <BoxOtherFood />
-                        <BoxOtherFood />
+                            {renderOtherFoods()}
                         <Gap height={20} />
                     </View>
                 </ScrollView>
