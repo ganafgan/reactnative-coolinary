@@ -83,7 +83,7 @@ const Restaurants = (props) => {
                         <Gap height={20} />
                     </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <Text style={styles.titleContent}>Top 10 Restaurants</Text>
+                    <Text style={styles.titleContent}>Favorite Restaurants</Text>
                     <View style={styles.wrapperScroll}>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             <View style={styles.boxRecommended}>

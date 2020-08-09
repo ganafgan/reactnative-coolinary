@@ -1,17 +1,21 @@
 import Splash from './Splash'
 import FoodCategory from './FoodCategory'
-import Home from './Home'
+import Foods from './Foods'
 import Maps from './Maps'
 import Restaurants from './Restaurants'
 import Loading from './Loading'
 import RestaurantsCategory from './RestaurantsCategory'
+import FoodDetail from './FoodDetail'
+import RestaurantDetail from './RestaurantDetail'
 
 export {
     Splash,
     FoodCategory,
-    Home,
+    Foods,
     Maps,
     Restaurants,
     Loading,
-    RestaurantsCategory
+    RestaurantsCategory,
+    FoodDetail,
+    RestaurantDetail
 }

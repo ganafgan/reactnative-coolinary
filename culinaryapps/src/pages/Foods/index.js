@@ -6,7 +6,7 @@ import { colors, fonts } from '../../utils'
 import Axios from 'axios'
 import Loading from '../Loading'
 
-const Home = () => { 
+const Foods = (props) => { 
 
     const [dataFoods, setDataFoods] = useState(null)
     console.log(dataFoods)
@@ -15,9 +15,11 @@ const Home = () => {
         getDataFoods()
     },[])
 
+    const cat = props.route.params.cat
+
     const getDataFoods = () => {
         const key = '7cd05d32ed7b44118b76b9626ed5b6bb'
-        Axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}`)
+        Axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&cuisine=${cat}&number=20`)
         .then((res)=>{
             console.log(res)
             setDataFoods(res.data.results)
@@ -28,25 +30,31 @@ const Home = () => {
     }
 
     const renderDataFoods = () => {
-        let filtered = dataFoods.slice(0,5)
+        
+        let filtered = dataFoods.slice(0,10)
 
         return filtered.map((val)=>{
             return <BoxFoods 
                     key={val.id}
                     img={{uri : val.image}}
                     nama={val.title}
+                    category={cat}
+                    onPress={() => props.navigation.navigate('FoodDetail', {id: val.id, image: val.image})}
+                    
                 />
         })
     }
 
     const renderOtherFoods = () => {
-        let filtered = dataFoods.slice(5,10)
+        let filtered = dataFoods.slice(10,20)
 
         return filtered.map((val)=>{
             return <BoxOtherFoods 
                     key={val.id}
                     img={{uri: val.image}}
                     nama={val.title}
+                    category={cat}
+                    onPress={() => props.navigation.navigate('FoodDetail', {id: val.id, image: val.image})}
                 />
         })
     }
@@ -87,7 +95,7 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Foods
 
 const styles = StyleSheet.create({
     container: {

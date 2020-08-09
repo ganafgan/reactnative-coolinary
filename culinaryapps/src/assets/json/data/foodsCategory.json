@@ -1,0 +1,35 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Japan",
+            "img": "https://i.imgur.com/LeO4W4F.jpg",
+            "cat": "Japanese" 
+
+        },
+        {
+            "id": 2,
+            "name": "Korean",
+            "img": "https://i.imgur.com/O38cYX8.jpg",
+            "cat": "Korean"
+        },
+        {
+            "id" : 3,
+            "name": "Frenchs",
+            "img": "https://i.imgur.com/7v8NB3B.jpg",
+            "cat": "French"
+        },
+        {
+            "id": 4,
+            "name": "Italian",
+            "img": "https://i.imgur.com/KureqRI.jpg",
+            "cat": "Italian"
+        },
+        {
+            "id": 5,
+            "name": "American",
+            "img": "https://i.imgur.com/56qqBBj.jpg",
+            "cat": "American"
+        }
+    ]
+}

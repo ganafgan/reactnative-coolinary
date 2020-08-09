@@ -6,6 +6,7 @@ import ICRestaurantsActive from './ic-restaurants-active.svg';
 import ICRestaurantsInactive from './ic-restaurants-inactive.svg';
 import ICMapsActive from './ic-maps-active.svg';
 import ICMapsInactive from './ic-maps-inactive.svg';
+import ICArrowForward from './ic-arrow-forward.svg';
 
 export {
     ICSearch,
@@ -15,5 +16,6 @@ export {
     ICRestaurantsActive,
     ICRestaurantsInactive,
     ICMapsActive,
-    ICMapsInactive
+    ICMapsInactive,
+    ICArrowForward
 }

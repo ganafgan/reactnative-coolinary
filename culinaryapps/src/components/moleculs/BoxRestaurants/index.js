@@ -1,19 +1,19 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors, fonts } from '../../../utils'
-import { ILLogo } from '../../../assets'
 
 
-const BoxRestaurants = ({nama, rating, ulasan, address, img}) => {
+const BoxRestaurants = ({nama, address, img}) => {
     return (
         <TouchableOpacity>
             <ImageBackground source={img} style={styles.img}>
-                <View>
-                    <Text style={styles.title}>{nama}</Text>
-                    <Text style={styles.rating}>{rating} ({ulasan} ulasan)</Text>
-                </View>
-                <View>
-                    <Text style={styles.address}>{address}</Text>
+                <View style={styles.container}>
+                    <View>
+                        <Text style={styles.title}>{nama}</Text>
+                    </View>
+                    <View>
+                        <Text style={styles.address}>{address}</Text>
+                    </View>
                 </View>
             </ImageBackground>
         </TouchableOpacity>
@@ -22,30 +22,28 @@ const BoxRestaurants = ({nama, rating, ulasan, address, img}) => {
 export default BoxRestaurants
 
 const styles = StyleSheet.create({
+    container: {
+        flex:1,
+        backgroundColor: 'rgba(0,0,0, 0.5)',
+        justifyContent: 'space-between',
+        padding: 20
+    },
     img: {
         height: 350,
         width: 200,
-        padding: 20,
         marginRight: 10,
         borderRadius: 20,
         overflow: 'hidden',
-        justifyContent: 'space-between',
         opacity: 0.8
-     
     },
     title: {
-        fontFamily: fonts.primary[800],
+        fontFamily: fonts.primary[600],
         fontSize: 16,
-        color:  colors.black
+        color:  colors.white
     },
-    rating: {
-        fontSize: 13,
-        fontFamily: fonts.primary[700],
-        color: colors.black
-    },  
     address: {
-        fontSize: 13,
-        fontFamily: fonts.primary[700],
-        color: colors.black
+        fontSize: 12,
+        fontFamily: fonts.primary[600],
+        color: colors.white
     }
 })

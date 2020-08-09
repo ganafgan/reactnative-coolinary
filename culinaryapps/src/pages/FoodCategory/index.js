@@ -1,10 +1,23 @@
 import React from 'react'
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { ILBgHome, ILLogo, ILCaffee, ILBakery, ILFoodCourt, ILCasualDining, ILFineDining } from '../../assets'
-import { Gap, ItemRestaurantsCategory } from '../../components'
+import { foodsJson, ILBgHome, ILLogo } from '../../assets'
+import { Gap, ItemCategory } from '../../components'
 import { colors, fonts } from '../../utils'
 
 const FoodCategory = (props) => {
+
+    const renderCategory = () => {
+        
+       return foodsJson.data.map((val)=>{
+            return <ItemCategory 
+                key={val.id}
+                img={{uri: val.img}}
+                name={val.name}
+                onPress={()=> props.navigation.navigate('FoodsList', {cat: val.cat})}
+            />
+        })
+    }
+     
     return (
         <View style={styles.container}>
             <ImageBackground source={ILBgHome} style={styles.imgBackground}>
@@ -13,11 +26,7 @@ const FoodCategory = (props) => {
             </ImageBackground>
             <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
                 <Gap height={20} />
-                <ItemRestaurantsCategory img={ILCaffee} nama='Caffee' onPress={() => navigation.navigate('RestaurantsList', {id: 1})}/>
-                <ItemRestaurantsCategory img={ILBakery} nama='Bakery' onPress={() => navigation.navigate('RestaurantsList', {id: 31})} />
-                <ItemRestaurantsCategory img={ILFoodCourt} nama='Food Court' onPress={() => navigation.navigate('RestaurantsList', {id: 20})} />
-                <ItemRestaurantsCategory img={ILCasualDining} nama='Casual Dining' onPress={() => navigation.navigate('RestaurantsList', {id: 16})} />
-                <ItemRestaurantsCategory img={ILFineDining} nama='Fine Dining' onPress={() => navigation.navigate('RestaurantsList', {id: 18})} />
+                {renderCategory()}
                 <Gap height={20} />
             </ScrollView>
         </View>

@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Caffee",
+            "img": "https://i.imgur.com/gRyIKHk.jpg",
+            "id_restaurant": 1
+        },
+        {
+            "id": 2,
+            "name": "Bakery",
+            "img": "https://i.imgur.com/bwRqpRn.jpg",
+            "id_restaurant": 31 
+        },
+        {
+            "id": 3,
+            "name": "Food Court",
+            "img": "https://i.imgur.com/pYa7QAq.jpg",
+            "id_restaurant": 20
+        },
+        {
+            "id": 4,
+            "name": "Casual Dining",
+            "img": "https://i.imgur.com/yqSYv0T.jpg",
+            "id_restaurant": 16
+        },
+        {
+            "id": 5,
+            "name": "Fine Dining",
+            "img": "https://i.imgur.com/xMrUJC3.jpg",
+            "id_restaurant": 18
+        }
+    ]
+}

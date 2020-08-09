@@ -1,10 +1,22 @@
 import React from 'react'
-import { Image, ImageBackground, StyleSheet, Text, View, ScrollView } from 'react-native'
-import { ILBgHome, ILLogo, ILBandung, ILJakarta, ILSurabaya, ILYogyakarta, ILCaffee, ILFoodCourt, ILCasualDining, ILFineDining, ILBakery } from '../../assets'
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ILBgHome, ILLogo, restaurantsJson } from '../../assets'
+import { Gap, ItemCategory } from '../../components'
 import { colors, fonts } from '../../utils'
-import { ItemRestaurantsCategory, Gap } from '../../components'
 
 const RestaurantsCategory = ({navigation}) => {
+
+    const renderCategory = () => {
+
+       return restaurantsJson.data.map((val)=>{
+            return <ItemCategory 
+                key={val.id}
+                name={val.name}
+                img={{uri: val.img}}
+                onPress={() => navigation.navigate('RestaurantsList', {id: val.id_restaurant})}
+            />
+        })
+    }
     return (
         <View style={styles.container}>
             <ImageBackground source={ILBgHome} style={styles.imgBackground}>
@@ -13,11 +25,7 @@ const RestaurantsCategory = ({navigation}) => {
             </ImageBackground>
             <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
                 <Gap height={20} />
-                <ItemRestaurantsCategory img={ILCaffee} nama='Caffee' onPress={() => navigation.navigate('RestaurantsList', {id: 1})}/>
-                <ItemRestaurantsCategory img={ILBakery} nama='Bakery' onPress={() => navigation.navigate('RestaurantsList', {id: 31})} />
-                <ItemRestaurantsCategory img={ILFoodCourt} nama='Food Court' onPress={() => navigation.navigate('RestaurantsList', {id: 20})} />
-                <ItemRestaurantsCategory img={ILCasualDining} nama='Casual Dining' onPress={() => navigation.navigate('RestaurantsList', {id: 16})} />
-                <ItemRestaurantsCategory img={ILFineDining} nama='Fine Dining' onPress={() => navigation.navigate('RestaurantsList', {id: 18})} />
+                {renderCategory()}
                 <Gap height={20} />
             </ScrollView>
         </View>

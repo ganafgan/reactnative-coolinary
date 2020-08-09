@@ -1,17 +1,17 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors, fonts } from '../../../utils'
+import { ICArrowForward } from '../../../assets'
 
 const BoxOtherRestaurants = ({nama, rating, ulasan, address, img}) => {
     return (
         <TouchableOpacity style={styles.container}>
             <Image source={img} style={styles.img} />
-            <View style={styles.page}>
+            <View style={styles.content}>
                 <Text style={styles.title}>{nama}</Text>
-                <Text style={styles.rating}>{rating} ({ulasan}) ulasan</Text>
-                
                 <Text style={styles.address}>{address}</Text>
             </View>
+            <ICArrowForward />
         </TouchableOpacity>
     )
 }
@@ -21,32 +21,33 @@ export default BoxOtherRestaurants
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        marginBottom: 10
+        marginBottom: 10,
+        paddingBottom: 10,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderBottomWidth: 2,
+        borderColor: colors.border,
     },
     img: {
         height: 80,
         width: 80,
         borderRadius: 20
     },
-    page: {
+    content: {
         flex: 1,
         marginLeft: 10,
+        marginHorizontal: 20
         
     },
     title: {
-        fontFamily: fonts.primary[800],
+        fontFamily: fonts.primary[600],
         fontSize: 16,
-        color:  colors.black
+        color:  colors.text.primary
     },
-    rating: {
-        fontSize: 13,
-        fontFamily: fonts.primary[700],
-        color: colors.black
-    },  
     address: {
-        fontSize: 13,
-        fontFamily: fonts.primary[700],
-        color: colors.black
+        fontSize: 12,
+        fontFamily: fonts.primary[600],
+        color: colors.text.secondary
     }
     
 })

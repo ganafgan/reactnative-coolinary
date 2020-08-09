@@ -2,12 +2,12 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors, fonts } from '../../../utils'
 
-const ItemRestaurantsCategory = ({nama, img, onPress}) => {
+const ItemRestaurantsCategory = ({name, img, onPress}) => {
     return (
         <TouchableOpacity onPress={onPress}>
            <ImageBackground style={styles.img} source={img}>
                <View style={styles.container}>
-                    <Text style={styles.title}>{nama}</Text>
+                    <Text style={styles.title}>{name}</Text>
                </View>
            </ImageBackground>
         </TouchableOpacity>
