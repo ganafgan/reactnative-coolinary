@@ -1,6 +1,7 @@
 const mainColors = {
     green1: '#2e928f',
     green2: '#EDFCFD',
+    green3: '#96C8C7',
     dark1: '#112340',
     dark2: '#495A75',
     dark3: '#8092AF',
@@ -20,7 +21,7 @@ const mainColors = {
 export const colors = {
     primary : mainColors.green1,
     secondary : mainColors.dark1,
-    tertiary: mainColors.blue1,
+    tertiary: mainColors.green3,
     white : 'white',
     black : 'black',
     disable: mainColors.grey3,
@@ -49,5 +50,6 @@ export const colors = {
     cardLight: mainColors.green2,
     LoadingBackground: mainColors.black2,
     error: mainColors.red1
+
 }
 

@@ -3,9 +3,9 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors, fonts } from '../../../utils'
 import { ICArrowForward } from '../../../assets'
 
-const BoxOtherRestaurants = ({nama, rating, ulasan, address, img}) => {
+const BoxOtherRestaurants = ({nama, address, img, onPress}) => {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onPress}>
             <Image source={img} style={styles.img} />
             <View style={styles.content}>
                 <Text style={styles.title}>{nama}</Text>
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         borderColor: colors.border,
     },
     img: {
-        height: 80,
-        width: 80,
+        height: 75,
+        width: 75,
         borderRadius: 20
     },
     content: {

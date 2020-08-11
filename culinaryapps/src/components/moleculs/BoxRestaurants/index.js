@@ -3,9 +3,9 @@ import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react
 import { colors, fonts } from '../../../utils'
 
 
-const BoxRestaurants = ({nama, address, img}) => {
+const BoxRestaurants = ({nama, address, img, onPress}) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
             <ImageBackground source={img} style={styles.img}>
                 <View style={styles.container}>
                     <View>

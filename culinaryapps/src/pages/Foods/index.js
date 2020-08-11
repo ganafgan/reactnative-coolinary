@@ -39,7 +39,7 @@ const Foods = (props) => {
                     img={{uri : val.image}}
                     nama={val.title}
                     category={cat}
-                    onPress={() => props.navigation.navigate('FoodDetail', {id: val.id, image: val.image})}
+                    onPress={() => props.navigation.navigate('FoodDetail', {id: val.id, image: val.image, title: val.title})}
                     
                 />
         })
@@ -54,7 +54,7 @@ const Foods = (props) => {
                     img={{uri: val.image}}
                     nama={val.title}
                     category={cat}
-                    onPress={() => props.navigation.navigate('FoodDetail', {id: val.id, image: val.image})}
+                    onPress={() => props.navigation.navigate('FoodDetail', {id: val.id, image: val.image, title: val.title})}
                 />
         })
     }

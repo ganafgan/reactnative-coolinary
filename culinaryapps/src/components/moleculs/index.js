@@ -6,7 +6,8 @@ import BoxFoods from './BoxFoods'
 import BoxOtherFoods from './BoxOtherFoods'
 import ItemCategory from './ItemCategory' 
 import BoxIngredient from './BoxIngredient'
-
+import BoxRating from './BoxRating'
+import BoxReviews from './BoxReviews'
 
 export {
     Search,
@@ -16,5 +17,7 @@ export {
     BoxFoods,
     BoxOtherFoods,
     ItemCategory,
-    BoxIngredient
+    BoxIngredient,
+    BoxRating,
+    BoxReviews
 }

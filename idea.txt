@@ -33,11 +33,17 @@ ID Bandung di Zomaton: 11052
 spoonacular API
 API Key: 7cd05d32ed7b44118b76b9626ed5b6bb
 
+Restaurant detail in zomato
+need:
+id-res: 18387851
+user-key: a0ec1643eb7bd6d8f4d7561fd2f289f0
+dataRestaurant.R.res_id
+
 contoh get recipe
 https://api.spoonacular.com/recipes/complexSearch?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb
 
 contoh get recipe and ingredients by ID
-https://api.spoonacular.com/recipes/547775/information?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb
+https://api.spoonacular.com/recipes/791918/information?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb
 
 contoh get recipe berdasarkan type
-https://api.spoonacular.com/recipes/complexSearch?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb&type=breakfast
+https://api.spoonacular.com/recipes/complexSearch?apiKey=7cd05d32ed7b44118b76b9626ed5b6bb&cuisine=Japanese&number=20

@@ -48,6 +48,7 @@ const Restaurants = (props) => {
                 address={val.restaurant.location.address}
                 price={val.restaurant.average_cost_for_two}
                 img={{uri: val.restaurant.featured_image.length > 0 ? val.restaurant.featured_image : 'https://www.indiaspora.org/wp-content/uploads/2018/10/image-not-available.jpg'}}
+                onPress={()=> props.navigation.navigate('RestaurantDetail', {id: val.restaurant.id})}
             />
         })
     }
@@ -64,6 +65,7 @@ const Restaurants = (props) => {
                 price={val.restaurant.average_cost_for_two}
                 address={val.restaurant.location.address}
                 img={{uri: val.restaurant.featured_image.length > 1 ? val.restaurant.featured_image : 'https://www.indiaspora.org/wp-content/uploads/2018/10/image-not-available.jpg'}}
+                onPress={()=> props.navigation.navigate('RestaurantDetail', {id: val.restaurant.id})} 
             />
         })
     }
