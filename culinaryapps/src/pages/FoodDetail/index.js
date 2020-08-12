@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { ImageBackground, ScrollView, StyleSheet, Text, View, Image } from 'react-native'
-import { BoxIngredient, Gap } from '../../components'
+import { BoxIngredient, Gap, BoxRating } from '../../components'
 import { colors, fonts } from '../../utils'
 import Loading from '../Loading'
 
@@ -9,6 +9,7 @@ const FoodDetail = (props) => {
 
     const [dataIngredient, setDataIngredient] = useState(null)
     const [dataCook, setDataCook] = useState(null)
+    const [dataFood, setDataFood] = useState(null)
     console.log(dataCook)
 
     useEffect(()=>{
@@ -26,6 +27,7 @@ const FoodDetail = (props) => {
             console.log(res)
             setDataIngredient(res.data.extendedIngredients)
             setDataCook(res.data.analyzedInstructions[0].steps)
+            setDataFood(res.data)
         })
         .catch((err)=>{
             console.log(err)
@@ -55,17 +57,28 @@ const FoodDetail = (props) => {
             )
         })
     }
-    if (dataIngredient === null || dataCook === null){
+    if (dataIngredient === null || dataCook === null || dataFood === null){
         return <Loading />
     }
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.wrapperImage}>
-                    <Gap height={20} />
+                    <Gap height={10} />
                     <Image source={{uri: image}} style={styles.img} />
-                    <Gap height={20} />
+                    <Gap height={10} />
                     <Text style={styles.title}>{title}</Text>
+                </View>
+                <Gap height={10} />
+                <View style={styles.boxRating}>
+                    <BoxRating 
+                        title1='Time'
+                        title2='Score'
+                        title3='Dish Type'
+                        rating={dataFood.readyInMinutes +' m'} 
+                        ulasan={dataFood.spoonacularScore}
+                        price={dataFood.dishTypes[0]}
+                    />
                 </View>
                 <Gap height={20} />
                 <Text style={styles.subtitle}>Ingredient</Text>
@@ -111,6 +124,9 @@ const styles = StyleSheet.create({
          color: colors.black,
          marginLeft: 5,
          textAlign: 'center'
+     },
+     boxRating: {
+        paddingHorizontal: 50
      },
      subtitle: {
         fontSize: 18,

@@ -86,6 +86,9 @@ const RestaurantDetail = (props) => {
                 <Gap height={10} />
                 <View style={styles.boxRating}>
                     <BoxRating 
+                    title1='Rating'
+                    title2='Reviews'
+                    title3='Price for 2'
                     rating={restaurantDetail.user_rating.aggregate_rating} 
                     ulasan={restaurantDetail.all_reviews_count}
                     price={restaurantDetail.average_cost_for_two}

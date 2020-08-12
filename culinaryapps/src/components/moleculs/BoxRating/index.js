@@ -2,13 +2,14 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { colors, fonts } from '../../../utils'
 
-const BoxRating = ({rating, ulasan, price}) => {
+const BoxRating = ({rating, ulasan, price, title1, title2, title3}) => {
+    
     return (
         <View style={styles.container}>
             <View style={styles.menuUp}>
-                <Text style={styles.textUp}>Rating </Text>
-                <Text style={styles.textUp}>Review</Text>
-                <Text style={styles.textUp}>Price for 2</Text>
+                <Text style={styles.textUp}>{title1}</Text>
+                <Text style={styles.textUp}>{title2}</Text>
+                <Text style={styles.textUp}>{title3}</Text>
             </View>
             <View style={styles.menuDown}>
                 <Text style={styles.textDown}>{rating} </Text>
